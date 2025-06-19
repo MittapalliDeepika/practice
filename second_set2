@@ -1,0 +1,4 @@
+WITH order_categories AS (SELECT od.order_id,COUNT(DISTINCT p.category)AS category_count FROM order_details od JOIN products p ON od.product_id=p.product_id GROUP BY od.order_id),
+total_categories AS (
+    SELECT COUNT(DISTINCT category)AS total_cat FROM products)
+SELECT oc.order_id FROM order_categories oc, total_categories tc WHERE oc.category_count = tc.total_cat;
