@@ -1,0 +1,4 @@
+def wrap_string(s,w):
+    for i in range(0,len(s),w):
+        print(s[i:i+w])
+wrap_string("ABCDEFGHIJKLIMNOQRSTUVWXYZ",4)
