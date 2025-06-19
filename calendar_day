@@ -1,0 +1,6 @@
+import calendar
+def find_the_day(month, day, year):
+    day_index=calendar.weekday(year,month,day)
+    return calendar.day_name[day_index].upper()
+month,day,year=map(int,input().split())
+print(find_the_day(month,day,year))
