@@ -1,0 +1,13 @@
+import string
+def print_rangoli(size):
+    alpha=string.ascii_lowercase
+    lines=[]
+    for i in range(size):
+        left=alpha[size-1:i:-1]  
+        center=alpha[i:size]    
+        line="-".join(left+center)
+        lines.append(line.center(4*size - 3,"-"))
+    full=lines[::-1]+lines[1:]
+    for line in full:
+        print(line)
+print_rangoli(5)
