@@ -1,0 +1,1 @@
+SELECT DISTINCT region FROM customers WHERE customer_id NOT IN(SELECT DISTINCT o.customer_id FROM orders o JOIN order_details od ON o.order_id=od.order_id WHERE od.product_id = 201);
